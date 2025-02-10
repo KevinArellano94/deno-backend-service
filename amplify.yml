@@ -1,0 +1,24 @@
+version: 1
+applications:
+  - appRoot: .
+    backend:
+      phases:
+        build:
+          commands:
+            - curl -fsSL https://deno.land/x/install/install.sh | sh
+            - export DENO_INSTALL="/root/.deno"
+            - export PATH="$DENO_INSTALL/bin:$PATH"
+            - deno compile --allow-net --allow-env --output dist/server server.ts
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+    frontend:
+      phases:
+        build:
+          commands:
+            - echo "No frontend build required"
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
