@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-read --allow-env --allow-net --watch server.ts",
+    "install": "deno install",
+    "start": "deno run --allow-read --allow-env --allow-net server.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "cors": "npm:cors@^2.8.5",
+    "express": "npm:express@^4.21.2",
+    "helmet": "npm:helmet@^8.0.0",
+    "morgan": "npm:morgan@^1.10.0"
+  }
+}
